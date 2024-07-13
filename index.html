@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="styles/light-theme.css" id="theme-link">
+</head>
+<body>
+    <header>
+        <button id="theme-toggle">Toggle Theme</button>
+    </header>
+    <main>
+        <div id="calendar-container">
+            <!-- Calendar will be dynamically generated here -->
+        </div>
+        <aside>
+            <div id="date-info">
+                <h2 id="selected-date">Select a Date</h2>
+                <ul id="date-events">
+                    <!-- Events for the selected date will be dynamically added here -->
+                </ul>
+                <button id="add-event">Add Event</button>
+                <button id="share-date">Share Date</button>
+            </div>
+            <div id="todo-container">
+                <h2>To Do</h2>
+                <ul id="todo-list">
+                    <!-- ToDo items will be dynamically added here -->
+                </ul>
+            </div>
+            <div id="schedule-container">
+                <h2>Schedule</h2>
+                <ul id="schedule-list">
+                    <!-- Schedule items will be dynamically added here -->
+                </ul>
+            </div>
+        </aside>
+    </main>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="event-form">
+                <label for="event-date">Date:</label>
+                <input type="date" id="event-date" name="event-date" required>
+                <label for="event-type">Type:</label>
+                <select id="event-type" name="event-type" required>
+                    <option value="todo">To Do</option>
+                    <option value="schedule">Schedule</option>
+                </select>
+                <label for="event-desc">Description:</label>
+                <input type="text" id="event-desc" name="event-desc" required>
+                <label for="event-time">Time:</label>
+                <input type="time" id="event-time" name="event-time" value="00:00">
+                <label for="event-audio">Choose Alarm Audio:</label>
+                <select id="event-audio" name="event-audio">
+                    <option value="default-alarm-1.mp3">Default Alarm 1</option>
+                    <option value="default-alarm-2.mp3">Default Alarm 2</option>
+                    <option value="default-alarm-3.mp3">Default Alarm 3</option>
+                </select>
+                <input type="file" id="custom-event-audio" name="custom-event-audio" accept="audio/*">
+                <button type="submit">Add Event</button>
+            </form>
+        </div>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
